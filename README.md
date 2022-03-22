@@ -275,15 +275,15 @@ Set its mode to side so that it appears on the side of the page.
       
    <font size="5" color="grey">**Step 10: Togelling Sidenav**</font>
       
-We will give [Template Refrence variable](https://angular.io/guide/template-reference-variables) to our side nav.
+Add a [Template Refrence variable](https://angular.io/guide/template-reference-variables) to side nav.
 
     <mat-sidenav #sideNav opened mode="side" >
 
-After that we will pass the reference variable to toolbar component so that we can control(toggle) the sideNav from it.
+After that pass the reference variable to toolbar component so that we can control toggle feature from the toolbar component.
 
     <app-toolbar [inputSideNav]="sidenav"></app-toolbar>
 
-We will create an [@input](https://angular.io/guide/inputs-outputs) variable inputSideNav of type MatSidenav
+Add an [@input](https://angular.io/guide/inputs-outputs) variable inputSideNav of type MatSidenav
 in ToolbarComponent as below : 
 
 ```javascript
@@ -297,7 +297,7 @@ export class ToolbarComponent implements OnInit {
 }
 ```
 
-We will create a link in toolbar.component.html. For toggle we will be added click event to our link as below : 
+Create a link in toolbar.component.html and add a `click` event to it as below : 
 
 ```
    <a class="sidenav-button"><i class="fas fa-bars" aria-hidden="true" (click)="inputSideNav.toggle()" > </i></a>
