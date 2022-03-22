@@ -24,7 +24,7 @@ To add routing,components and configure routes [Click Here](https://github.com/P
 
 <font size="5" color="grey">**Step 1: Adding Angular Material support**</font> 
 
-Use the Angular CLI's installation schematic to set up your Angular Material project by running the following command:
+Use the `Angular CLI's` installation schematic to set up your Angular Material project by running the following command:
 
 ```
 ng add @angular/material
@@ -55,7 +55,7 @@ You can see the changes as below :
 
 The [FormsModule](https://angular.io/api/forms/FormsModule) is used for form implementation.
 
-Import the FormsModule & MatSidenavModule in app.module.ts as below 
+Import the `FormsModule` & `MatSidenavModule` in app.module.ts as below 
 
 ``` javascript
 imports: [
@@ -68,7 +68,7 @@ imports: [
 ```
 <font size="5" color="grey">**Step 3: Add component for side nav**</font>
 
-Use Amgular CLI's generate component command as below 
+Use Angular CLI's generate component command as below 
 
 ```
 ng g component sidenav
@@ -76,7 +76,7 @@ ng g component sidenav
 
 <font size="5" color="grey">**Step 4: Setting Up Side Nav**</font>
 
-To set up a sidenav we use three components: <mat-sidenav-container> which acts as a structural container for our content and sidenav, <mat-sidenav-content> which represents the main content, and <mat-sidenav> which represents the added side content.
+To set up a `sidenav` we use three components: <mat-sidenav-container> which acts as a structural container for our content and sidenav, <mat-sidenav-content> which represents the main content, and <mat-sidenav> which represents the added side content.
 
 We don't want our top nav to be effected by the side nav so  add sidenav structure under the toolbar component in app.components.html
 
@@ -93,8 +93,8 @@ We don't want our top nav to be effected by the side nav so  add sidenav structu
 
 <font size="5" color="grey">**Step 5: mat-sidenav**</font>
 
-mat-sidenav is going to hold the html for the side nav so we will put <app-sidenav></app-sidenav> there
-and contents of the routed components will go inside <mat-sidenav-content> so we will paste <router-outlet></router-outlet> in mat-sidenav-content. 
+`mat-sidenav` is going to hold the html for the side nav so we will put `<app-sidenav></app-sidenav>` there
+and contents of the routed components will go inside `<mat-sidenav-content>` so we will paste <router-outlet></router-outlet> in mat-sidenav-content. 
 
 Add style 100% so that menu can be render on full screen.
 
@@ -115,7 +115,7 @@ Add style 100% so that menu can be render on full screen.
 
 <font size="5" color="grey">**Step 6: Adding Style for side nav**</font>
 
-Add following CSS in sidenav.component.html to style the side nav. 
+Add following `CSS` in sidenav.component.html to style the side nav. 
 
 ```javascript
 .sidenav { /* styles to give redish gradiesnt to side nav */
@@ -249,7 +249,7 @@ add "nav" style to ul and active style to dashboard link.
 
 <font size="5" color="grey">**Step 8: Fixing navbar background colors**</font>
 
-To match the background of navbar with our application's backgorund color use the followig style in main style.css file 
+To match the background of navbar with our application's backgorund color use the followig style in main `style.css` file 
 
 ```javascript
 .mat-drawer-content {
@@ -266,7 +266,7 @@ To match the background of navbar with our application's backgorund color use th
 
 <font size="5" color="grey">**Step 9: Opening the side nav**</font>
 
-Add property "opened" to mat-sidenav to start is as opened by default. 
+Add property `opened` to `mat-sidenav` to start is as opened by default. 
 Set its mode to side so that it appears on the side of the page. 
 
 ```
