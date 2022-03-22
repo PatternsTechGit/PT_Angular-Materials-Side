@@ -264,10 +264,16 @@ To match the background of navbar with our application's backgorund color use th
 <font size="5" color="grey">**Step 9: Opening the side nav**</font>
 
 Add property "opened" to mat-sidenav to start is as opened by default. 
+Set its mode to side so that it appears on the side of the page. 
 
 ```
   <mat-sidenav opened mode="side">
  ```
+      
+   <font size="5" color="grey">**Step 10: Togelling Sidenav**</font>
+      We will give [Template Refrence variable](https://angular.io/guide/template-reference-variables) to our side nav.
+
+    <mat-sidenav #sideNav opened mode="side" >
 
 
 
