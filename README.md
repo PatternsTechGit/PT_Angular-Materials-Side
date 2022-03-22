@@ -19,7 +19,7 @@ We already have a tool bar implemented in our application.
 To see how to create top nav [Click Here]()
 
 ## Routing:
-To add routing,components and configure routes [Click Here]() 
+To add routing,components and configure routes [Click Here](https://github.com/PatternsTechGit/PT_Routing) 
 
 
 <font size="5" color="grey">**Step 1: Adding Angular Material support**</font> 
