@@ -44,7 +44,10 @@ The ng add @angular/material command will additionally perform the following act
 * Set height: 100% on html and body
 * Set Roboto as the default application font
 
-## I have to ADD SC.
+You can see the changes as below :
+
+![1234](https://user-images.githubusercontent.com/100709775/159500312-1f1ee93c-297f-4ae2-9712-39b775722f61.PNG)
+
 
 
 
@@ -209,7 +212,7 @@ Add following CSS in sidenav.component.html to style the side nav.
 }
 ```
 
-<font size="5" color="grey">**Step 7: Html of side nav**</font>
+<font size="5" color="grey">**Step 7: side nav Html**</font>
 
 
 Side nav will have 2 parts. The logo part at the top and navigiation links part at the botton.
@@ -271,9 +274,39 @@ Set its mode to side so that it appears on the side of the page.
  ```
       
    <font size="5" color="grey">**Step 10: Togelling Sidenav**</font>
-      We will give [Template Refrence variable](https://angular.io/guide/template-reference-variables) to our side nav.
+      
+We will give [Template Refrence variable](https://angular.io/guide/template-reference-variables) to our side nav.
 
     <mat-sidenav #sideNav opened mode="side" >
+
+After that we will pass the reference variable to toolbar component so that we can control(toggle) the sideNav from it.
+
+    <app-toolbar [inputSideNav]="sidenav"></app-toolbar>
+
+We will create an [@input](https://angular.io/guide/inputs-outputs) variable inputSideNav of type MatSidenav
+in ToolbarComponent as below : 
+
+```javascript
+export class ToolbarComponent implements OnInit {
+  // @ts-ignore: Object is possible 'null'
+  @Input() inputSideNav:MatSidenav
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+}
+```
+
+We will create a link in toolbar.component.html. For toggle we will be added click event to our link as below : 
+
+```
+   <a class="sidenav-button"><i class="fas fa-bars" aria-hidden="true" (click)="inputSideNav.toggle()" > </i></a>
+ 
+```
+
+Run the application and see its working as below : 
+
+![12345](https://user-images.githubusercontent.com/100709775/159506372-3aaa9cf4-1f83-43a0-8551-4ee5eb75cc71.PNG)
 
 
 
