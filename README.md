@@ -306,7 +306,7 @@ We will create a link in toolbar.component.html. For toggle we will be added cli
 
 Run the application and see its working as below : 
 
-![12345](https://user-images.githubusercontent.com/100709775/159506372-3aaa9cf4-1f83-43a0-8551-4ee5eb75cc71.PNG)
+![11](https://user-images.githubusercontent.com/100709775/159506931-82499f18-0e02-4d21-a187-0ec769ceaab1.PNG)
 
 
 
