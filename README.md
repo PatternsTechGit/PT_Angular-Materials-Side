@@ -16,7 +16,7 @@ For more details click link https://material.angular.io/components/sidenav/overv
 ## Top Nav
 
 We already have a tool bar implemented in our application. 
-To see how to create top nav [Click Here]()
+To see how to create top nav [Click Here](https://github.com/PatternsTechGit/PT_BootstrapNavBar)
 
 ## Routing:
 To add routing,components and configure routes [Click Here](https://github.com/PatternsTechGit/PT_Routing) 
