@@ -299,7 +299,7 @@ export class ToolbarComponent implements OnInit {
 Create a link in toolbar.component.html and add a `click` event to it as below : 
 
 ```
-   <a class="sidenav-button"><i class="fas fa-bars" aria-hidden="true" `(click)="inputSideNav.toggle()"` > </i></a>
+   <a class="sidenav-button"><i class="fas fa-bars" aria-hidden="true" (click)="inputSideNav.toggle()" > </i></a>
  
 ```
 
