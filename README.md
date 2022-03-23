@@ -5,7 +5,6 @@ In this exersice we are going to use Angular Material's Side nav in angular appl
 
 [Angualr Material](https://material.angular.io/guide/getting-started) is a UI component library for Angular  developers. Angualr Material helps to construct attractive, consistent, and functional web pages. It is used to create a responsive and faster website.
 
-Here are the steps to add routing in angular application.
 
 ## Angular Materual Side nav
 Angular Material provides two sets of components designed to add collapsible side content (often navigation, though it can be any content) alongside some primary content. These are the sidenav and drawer components.
@@ -19,7 +18,7 @@ We already have a tool bar implemented in our application.
 To see how to create top nav [Click Here](https://github.com/PatternsTechGit/PT_BootstrapNavBar)
 
 ## Routing:
-To add routing,components and configure routes [Click Here](https://github.com/PatternsTechGit/PT_Routing) 
+To add `routing`, `components` and configure routes [Click Here](https://github.com/PatternsTechGit/PT_Routing) 
 
 
 <font size="5" color="grey">**Step 1: Adding Angular Material support**</font> 
