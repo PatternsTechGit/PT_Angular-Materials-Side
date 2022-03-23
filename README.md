@@ -18,7 +18,7 @@ We already have a tool bar implemented in our application.
 To see how to create top nav [Click Here](https://github.com/PatternsTechGit/PT_BootstrapNavBar)
 
 ## Routing:
-To add `routing`, `components` and configure routes [Click Here](https://github.com/PatternsTechGit/PT_Routing) 
+To add `routing`,`components` and configure routes [Click Here](https://github.com/PatternsTechGit/PT_Routing) 
 
 
 <font size="5" color="grey">**Step 1: Adding Angular Material support**</font> 
@@ -299,7 +299,7 @@ export class ToolbarComponent implements OnInit {
 Create a link in toolbar.component.html and add a `click` event to it as below : 
 
 ```
-   <a class="sidenav-button"><i class="fas fa-bars" aria-hidden="true" (click)="inputSideNav.toggle()" > </i></a>
+   <a class="sidenav-button"><i class="fas fa-bars" aria-hidden="true" `(click)="inputSideNav.toggle()"` > </i></a>
  
 ```
 
