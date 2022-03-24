@@ -24,7 +24,7 @@ Previously we new scafolded Angular application in which we have integrated
 
 In this exercise we will
 
-* Integrate Angular Material
+* Integrating Angular Material
 * Add Styling
 * Toggling Sidenav 
 
