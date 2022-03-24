@@ -305,7 +305,7 @@ Create a link in toolbar.component.html and add a `click` event to it as below :
 
 Run the application and see its working as below : 
       
-![20220324-212659_capture](https://user-images.githubusercontent.com/100709775/159964133-de400ecf-142d-40c4-b489-4fd92a380f9c.gif)
+![20220324-213449_capture](https://user-images.githubusercontent.com/100709775/159965696-0a423990-f0b9-4dcb-87a1-ca28bc018c54.gif)
 
 
 
