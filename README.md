@@ -1,24 +1,32 @@
 # Adding Angular Material's Side for Routing
 
+## What is Angular Material
 
-In this exersice we are going to use Angular Material's Side nav in angular application. 
-
-[Angualr Material](https://material.angular.io/guide/getting-started) is a UI component library for Angular  developers. Angualr Material helps to construct attractive, consistent, and functional web pages. It is used to create a responsive and faster website.
+[Angular Material](https://material.angular.io/guide/getting-started) is a UI component library for Angular  developers. Angular Material helps to construct attractive, consistent, and functional web pages. It is used to create a responsive and faster website.
 
 
-## Angular Materual Side nav
+## What is Angular Material Side nav
+
 Angular Material provides two sets of components designed to add collapsible side content (often navigation, though it can be any content) alongside some primary content. These are the sidenav and drawer components.
 
 The sidenav components are designed to add side content to a fullscreen app. 
 For more details click link https://material.angular.io/components/sidenav/overview 
 
-## Top Nav
+## About this exercise
 
-We already have a tool bar implemented in our application. 
-To see how to create top nav [Click Here](https://github.com/PatternsTechGit/PT_BootstrapNavBar)
+Previously we new scafolded Angular application in which we have integrated 
 
-## Routing:
-To add `routing`,`components` and configure routes [Click Here](https://github.com/PatternsTechGit/PT_Routing) 
+* FontAwesome
+* Bootstrap
+* Routing
+* Bootstrap Top Nav
+
+
+In this exercise we will
+
+* Integrate Angular Material
+* Add Styling
+* Toggling Sidenav 
 
 
 <font size="5" color="grey">**Step 1: Adding Angular Material support**</font> 
@@ -28,7 +36,8 @@ Use the `Angular CLI's` installation schematic to set up your Angular Material p
 ```
 ng add @angular/material
 ```
-* press 'y'.
+
+* press 'y' to confirm.
 * Select indigo pink theme.
 * Select 'y' for typography.
 * press 'y' for browser animation.
@@ -65,6 +74,7 @@ imports: [
     MatSidenavModule
   ],
 ```
+
 <font size="5" color="grey">**Step 3: Add component for side nav**</font>
 
 Use Angular CLI's generate component command as below 
@@ -75,7 +85,7 @@ ng g component sidenav
 
 <font size="5" color="grey">**Step 4: Setting Up Side Nav**</font>
 
-To set up a `sidenav` we use three components: <mat-sidenav-container> which acts as a structural container for our content and sidenav, <mat-sidenav-content> which represents the main content, and <mat-sidenav> which represents the added side content.
+To set up a `sidenav` we use three components: `<mat-sidenav-container>` which acts as a structural container for our content and sidenav, `<mat-sidenav-content>` which represents the main content and `<mat-sidenav>` which represents the added side content.
 
 We don't want our top nav to be effected by the side nav so  add sidenav structure under the toolbar component in app.components.html
 
@@ -93,9 +103,9 @@ We don't want our top nav to be effected by the side nav so  add sidenav structu
 <font size="5" color="grey">**Step 5: mat-sidenav**</font>
 
 `mat-sidenav` is going to hold the html for the side nav so we will put `<app-sidenav></app-sidenav>` there
-and contents of the routed components will go inside `<mat-sidenav-content>` so we will paste <router-outlet></router-outlet> in mat-sidenav-content. 
+and contents of the routed components will go inside `<mat-sidenav-content>` so we will paste `<router-outlet></router-outlet>` in mat-sidenav-content. 
 
-Add style 100% so that menu can be render on full screen.
+Set `height: 100%` so that menu can be render on full screen.
 
 ```javascript
 <div class="container-fluid" style="height: 100%;">
@@ -114,7 +124,7 @@ Add style 100% so that menu can be render on full screen.
 
 <font size="5" color="grey">**Step 6: Adding Style for side nav**</font>
 
-Add following `CSS` in sidenav.component.html to style the side nav. 
+Add following `CSS` in sidenav.component.css to style the side nav. 
 
 ```javascript
 .sidenav { /* styles to give redish gradiesnt to side nav */
@@ -211,14 +221,13 @@ Add following `CSS` in sidenav.component.html to style the side nav.
 }
 ```
 
-<font size="5" color="grey">**Step 7: side nav Html**</font>
+<font size="5" color="grey">**Step 7: Side Nav Html**</font>
 
 
-Side nav will have 2 parts. The logo part at the top and navigiation links part at the botton.
+Side Nav will have 2 parts. The logo part at the top and navigiation links part at the botton.
 
-<!-- Add logo image to assets -->
 
-Add logo image to assets and copy the commented routing links from app.components, under logo div 
+Add logo image to assets and copy the commented routing links from app.components.html under logo div 
 
 add "nav" style to ul and active style to dashboard link.
 
@@ -248,7 +257,7 @@ add "nav" style to ul and active style to dashboard link.
 
 <font size="5" color="grey">**Step 8: Fixing navbar background colors**</font>
 
-To match the background of navbar with our application's backgorund color use the followig style in main `style.css` file 
+To match the background of navbar with our application's background color use the following style in main `style.css` file 
 
 ```javascript
 .mat-drawer-content {
@@ -270,20 +279,16 @@ Set its mode to side so that it appears on the side of the page.
 
 ```
   <mat-sidenav opened mode="side">
- ```
-      
-   <font size="5" color="grey">**Step 10: Togelling Sidenav**</font>
+```
+
+   <font size="5" color="grey">**Step 10: Toggling Sidenav**</font>
       
 Add a [Template Refrence variable](https://angular.io/guide/template-reference-variables) to side nav.
 
-    <mat-sidenav #sideNav opened mode="side" >
-
-After that pass the reference variable to toolbar component so that we can control toggle feature from the toolbar component.
-
-    <app-toolbar [inputSideNav]="sidenav"></app-toolbar>
+​    <mat-sidenav #sideNav opened mode="side" >
 
 Add an [@input](https://angular.io/guide/inputs-outputs) variable inputSideNav of type MatSidenav
-in ToolbarComponent as below : 
+in Toolbar.Component.ts as below : 
 
 ```javascript
 export class ToolbarComponent implements OnInit {
@@ -296,6 +301,12 @@ export class ToolbarComponent implements OnInit {
 }
 ```
 
+After that pass the reference variable to toolbar component so that we can control toggle feature from the toolbar component.
+
+​    <app-toolbar [inputSideNav]="sidenav"></app-toolbar>
+
+
+
 Create a link in toolbar.component.html and add a `click` event to it as below : 
 
 ```
@@ -303,8 +314,10 @@ Create a link in toolbar.component.html and add a `click` event to it as below :
  
 ```
 
+Here `inputSideNav.toggle()` is used to switch from one effect to other and vise versa.
+
 Run the application and see its working as below : 
-      
+
 ![20220324-213449_capture](https://user-images.githubusercontent.com/100709775/159965696-0a423990-f0b9-4dcb-87a1-ca28bc018c54.gif)
 
 
