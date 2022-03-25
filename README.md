@@ -14,7 +14,7 @@ For more details click link https://material.angular.io/components/sidenav/overv
 
 ## About this exercise
 
-Previously we new scafolded Angular application in which we have integrated 
+Previously we scafolded a new Angular application in which we have integrated 
 
 * FontAwesome
 * Bootstrap
