@@ -19,14 +19,14 @@ Previously we scafolded a new Angular application in which we have integrated
 * FontAwesome
 * Bootstrap
 * Routing
-* Bootstrap Top Nav
+* Bootstrap's Toolbar
 
 
 In this exercise we will
 
-* Integrating Angular Material
-* Add Styling
-* Toggling Sidenav 
+* Integrate Angular Material
+* Integrate Angular Side Nav
+* Integrate Toggling using Toolbar 
 
 
 <font size="5" color="grey">**Step 1: Adding Angular Material support**</font> 
