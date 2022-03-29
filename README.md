@@ -1,11 +1,11 @@
-# Adding Angular Material's Side for Routing
+# Adding Angular Material's Side Nav for Routing
 
 ## What is Angular Material
 
 [Angular Material](https://material.angular.io/guide/getting-started) is a UI component library for Angular  developers. Angular Material helps to construct attractive, consistent, and functional web pages. It is used to create a responsive and faster website.
 
 
-## What is Angular Material Side nav
+## What is Angular Material Side Nav
 
 Angular Material provides two sets of components designed to add collapsible side content (often navigation, though it can be any content) alongside some primary content. These are the sidenav and drawer components.
 
@@ -16,17 +16,28 @@ For more details click link https://material.angular.io/components/sidenav/overv
 
 Previously we scafolded a new Angular application in which we have integrated 
 
-* FontAwesome
-* Bootstrap
-* Routing
-* Bootstrap's Toolbar
+* FontAwesome Library for icons
+* Bootstrap Library for styling buttons
+* Routing for multiple components e.g. (CreateAccountComponent, ManageAccountsComponent, DepositFundsComponent, TransferFundsComponent) for which we have already configured routing. Also we have commented code of links in app.component.html as below :
+```javascript
+<!-- <ul>
+  <li><a><i class="fas fa-chart-line"></i> Dashboard</a></li>
+  <div>
+    <li><a [routerLink]="['/transfer-funds', { fromAccountId: '111', toAccountId: '222' }]"><i class="fas fa-random"></i> Transfer Funds</a></li>
+    <li><a [routerLink]="['/deposit-funds']"><i class="fas fa-money-check-alt"></i>Deposit Funds</a></li>
+    <li><a [routerLink]="['/create-account']"><i class="fas fa-user"></i> Create New Account</a></li>
+    <li><a [routerLink]="['/manage-accounts']"><i class="fas fa-users"></i> Manage Accounts</a></li>
+  </div>
+</ul> -->
+```
+* Bootstrap's Navbar which is responsive and mobile friendly
 
 
 In this exercise we will
 
-* Integrate Angular Material
-* Integrate Angular Side Nav
-* Integrate Toggling using Toolbar 
+* Integrate Angular Material 
+* Integrate Angular Side Nav which will have links to navigate to our components
+* Integrate Toggling of Side Nav using Toolbar 
 
 
 <font size="5" color="grey">**Step 1: Adding Angular Material support**</font> 
@@ -85,15 +96,18 @@ ng g component sidenav
 
 <font size="5" color="grey">**Step 4: Setting Up Side Nav**</font>
 
-To set up a `sidenav` we use three components: `<mat-sidenav-container>` which acts as a structural container for our content and sidenav, `<mat-sidenav-content>` which represents the main content and `<mat-sidenav>` which represents the added side content.
+To set up a `sidenav` we use three components: `mat-sidenav-container`, `mat-sidenav-content`and `mat-sidenav`
 
-We don't want our top nav to be effected by the side nav so  add sidenav structure under the toolbar component in app.components.html
+
 
 ```javascript
+<!-- mat-sidenav-container which acts as a structural container for our content and sidenav  -->
     <mat-sidenav-container>
+    <!-- mat-sidenav which represents the added side content -->
         <mat-sidenav>
             // Here our side nav component will be render.
         </mat-sidenav>
+       <!--  mat-sidenav-content which represents the main content -->
         <mat-sidenav-content>
           //  Here routed components will be shown. 
         </mat-sidenav-content>
@@ -104,6 +118,8 @@ We don't want our top nav to be effected by the side nav so  add sidenav structu
 
 `mat-sidenav` is going to hold the html for the side nav so we will put `<app-sidenav></app-sidenav>` there
 and contents of the routed components will go inside `<mat-sidenav-content>` so we will paste `<router-outlet></router-outlet>` in mat-sidenav-content. 
+
+We don't want our top nav to be effected by the side nav so  add sidenav structure under the toolbar component in app.components.html
 
 Set `height: 100%` so that menu can be render on full screen.
 
@@ -224,7 +240,7 @@ Add following `CSS` in sidenav.component.css to style the side nav.
 <font size="5" color="grey">**Step 7: Side Nav Html**</font>
 
 
-Side Nav will have 2 parts. The logo part at the top and navigiation links part at the botton.
+Side Nav will have 2 parts. The logo part at the top and navigation links part at the button.
 
 
 Add logo image to assets and copy the commented routing links from app.components.html under logo div 
@@ -274,11 +290,14 @@ To match the background of navbar with our application's background color use th
 
 <font size="5" color="grey">**Step 9: Opening the side nav**</font>
 
-Add property `opened` to `mat-sidenav` to start is as opened by default. 
-Set its mode to side so that it appears on the side of the page. 
+Setting `opened` and `side` mode to `mat-sidenav` to start is as opened by default. 
+
 
 ```
-  <mat-sidenav opened mode="side">
+<!-- opened is used to show the navbar by default. -->
+<!-- side mode is used to ashow side navbar on the side of the page. -->
+<!-- #sideNav is used as template regerence variable. -->
+  <mat-sidenav #sideNav opened mode="side" >
 ```
 
    <font size="5" color="grey">**Step 10: Toggling Sidenav**</font>
