@@ -288,14 +288,14 @@ To match the background of navbar with our application's background color use th
 }
 ```
 
-<font size="5" color="grey">**Step 9: Opening the side nav**</font>
+<font size="5" color="grey">**Step 9: Opening the Side Nav**</font>
 
-Setting `opened` and `side` mode to `mat-sidenav` to start is as opened by default. 
+Setting `opened` and `side` mode to `mat-sidenav`. 
 
 
 ```
 <!-- opened is used to show the navbar by default. -->
-<!-- side mode is used to ashow side navbar on the side of the page. -->
+<!-- side mode is used to show side navbar on the side of the page. -->
 <!-- #sideNav is used as template regerence variable. -->
   <mat-sidenav #sideNav opened mode="side" >
 ```
