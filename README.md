@@ -19,7 +19,7 @@ Previously we scafolded a new Angular application in which we have integrated
 * FontAwesome Library for icons
 * Bootstrap Library for styling buttons
 * Routing for multiple components e.g. (CreateAccountComponent, ManageAccountsComponent, DepositFundsComponent, TransferFundsComponent) for which we have already configured routing. Also we have commented code of links in app.component.html as below :
-```javascript
+```html
 <!-- <ul>
   <li><a><i class="fas fa-chart-line"></i> Dashboard</a></li>
   <div>
@@ -100,7 +100,7 @@ To set up a `sidenav` we use three components: `mat-sidenav-container`, `mat-sid
 
 
 
-```javascript
+```html
 <!-- mat-sidenav-container which acts as a structural container for our content and sidenav  -->
     <mat-sidenav-container>
     <!-- mat-sidenav which represents the added side content -->
@@ -123,7 +123,7 @@ We don't want our top nav to be effected by the side nav so  add sidenav structu
 
 Set `height: 100%` so that menu can be render on full screen.
 
-```javascript
+```html
 <div class="container-fluid" style="height: 100%;">
 <app-toolbar></app-toolbar> 
       <mat-sidenav-container  style="height: 100%;">
@@ -142,7 +142,7 @@ Set `height: 100%` so that menu can be render on full screen.
 
 Add following `CSS` in sidenav.component.css to style the side nav. 
 
-```javascript
+```css
 .sidenav { /* styles to give redish gradiesnt to side nav */
     background: #ec250d;
     background: linear-gradient(0deg,#ec250d 0,#fd5d93 100%);
@@ -247,7 +247,7 @@ Add logo image to assets and copy the commented routing links from app.component
 
 add "nav" style to ul and active style to dashboard link.
 
-``` javascript
+``` html
 <div class="sidenav">
     <div class="logo">
         <a href="/" class="simple-text logo-mini">
@@ -275,7 +275,7 @@ add "nav" style to ul and active style to dashboard link.
 
 To match the background of navbar with our application's background color use the following style in main `style.css` file 
 
-```javascript
+```css
 .mat-drawer-content {
   overflow: hidden !important;
 }
@@ -288,14 +288,14 @@ To match the background of navbar with our application's background color use th
 }
 ```
 
-<font size="5" color="grey">**Step 9: Opening the Side Nav**</font>
+<font size="5" color="grey">**Step 9: Opening the side nav**</font>
 
-Setting `opened` and `side` mode to `mat-sidenav`. 
+Setting `opened` and `side` mode to `mat-sidenav` to start is as opened by default. 
 
 
 ```
 <!-- opened is used to show the navbar by default. -->
-<!-- side mode is used to show side navbar on the side of the page. -->
+<!-- side mode is used to ashow side navbar on the side of the page. -->
 <!-- #sideNav is used as template regerence variable. -->
   <mat-sidenav #sideNav opened mode="side" >
 ```
@@ -328,7 +328,7 @@ After that pass the reference variable to toolbar component so that we can contr
 
 Create a link in toolbar.component.html and add a `click` event to it as below : 
 
-```
+```html
    <a class="sidenav-button"><i class="fas fa-bars" aria-hidden="true" (click)="inputSideNav.toggle()" > </i></a>
  
 ```
