@@ -293,7 +293,7 @@ To match the background of navbar with our application's background color use th
 Setting `opened` and `side` mode to `mat-sidenav` to start is as opened by default. 
 
 
-```
+```html
 <!-- opened is used to show the navbar by default. -->
 <!-- side mode is used to ashow side navbar on the side of the page. -->
 <!-- #sideNav is used as template regerence variable. -->
@@ -304,7 +304,9 @@ Setting `opened` and `side` mode to `mat-sidenav` to start is as opened by defau
       
 Add a [Template Refrence variable](https://angular.io/guide/template-reference-variables) to side nav.
 
+```html
 ​    <mat-sidenav #sideNav opened mode="side" >
+```
 
 Add an [@input](https://angular.io/guide/inputs-outputs) variable inputSideNav of type MatSidenav
 in Toolbar.Component.ts as below : 
