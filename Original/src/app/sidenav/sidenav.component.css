@@ -1,4 +1,4 @@
-.sidenav { /* styles to give redish gradiesnt to side nav */
+.sidenav { /* styles to give redish gradient to side nav */
     background: #ec250d;
     background: linear-gradient(0deg,#ec250d 0,#fd5d93 100%);
     /* height: calc(100vh - 90px); */

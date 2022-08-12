@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 @Component({
   selector: 'app-toolbar',
@@ -6,7 +6,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
- // @ts-ignore: Object is possible 'null'
+  // @ts-ignore: Object is possible 'null'
   @Input() inputSideNav:MatSidenav
   constructor() { }
 

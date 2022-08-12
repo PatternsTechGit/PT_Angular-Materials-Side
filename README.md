@@ -97,7 +97,7 @@ To generate a new component we will use Angular CLI's generate component command
 ng g component toolbar
 ```
 This will also *import toolbar component* in the declaration array in` app.module.ts` file.  
-After that, we have to place the selector `<app-toolbar></app-toolbar>` of toolbar component in `app.component.html
+After that, we have to place the selector `<app-toolbar></app-toolbar>` of toolbar component in `app.component.html`
 
 ## Step 4: Designing Navbar Template
 In the `toolbar.component.html` write the following HTML code for navBar Component
@@ -430,9 +430,10 @@ Open the `app.component.html` and add a [Template Reference variable](https://an
 ```
 
 Add an [@input](https://angular.io/guide/inputs-outputs) variable inputSideNav of type MatSidenav
-in Toolbar.Component.ts as below : 
+in `Toolbar.Component.ts` as below : 
 
 ```javascript
+import { Component, OnInit, Input } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 export class ToolbarComponent implements OnInit {
   // @ts-ignore: Object is possible 'null'
@@ -444,10 +445,11 @@ export class ToolbarComponent implements OnInit {
 }
 ```
 
-After that pass the reference variable to toolbar component so that we can control toggle feature from the toolbar component.
+We will add the input variable to `app-toolbar` so that we can set the property to inner component.
 
+```html
 ​    <app-toolbar [inputSideNav]="sidenav"></app-toolbar>
-
+```
 
 
 Create a new link in `toolbar.component.html` and add a `click` event.
