@@ -421,7 +421,7 @@ Open the `app.component.html` and set `opened` and `side` property mode to `mat-
   <mat-sidenav opened mode="side">
 ```
 
-  ## Step 10: Toggling Sidenav
+  ## Step 11: Toggling Sidenav
       
 Open the `app.component.html` and add a [Template Reference variable](https://angular.io/guide/template-reference-variables) named `#sideNav` to side nav.
 
