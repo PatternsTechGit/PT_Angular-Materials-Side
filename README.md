@@ -253,7 +253,9 @@ Set `height: 100%` so that menu can be render on full screen.
         <app-sidenav></app-sidenav>
           </mat-sidenav>
           <mat-sidenav-content>
-            <router-outlet></router-outlet> 
+             <div style="color: white">
+              <router-outlet></router-outlet> 
+            </div>
           </mat-sidenav-content>
       </mat-sidenav-container>
 </div>
