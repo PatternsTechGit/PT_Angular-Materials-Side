@@ -77,6 +77,9 @@ The [FormsModule](https://angular.io/api/forms/FormsModule) is used for form imp
 Import the `FormsModule` & `MatSidenavModule` in app.module.ts as below 
 
 ``` javascript
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { FormsModule } from '@angular/forms';
+
 imports: [
     BrowserModule,
     AppRoutingModule,
@@ -85,29 +88,140 @@ imports: [
     MatSidenavModule
   ],
 ```
-## Step 3: Add Toolbar Component
+## Step 3: Add Navbar Component
 We will add a new component for toolbar which will contains the logged-In user  information.
 
 To generate a new component we will use Angular CLI's generate component command as below :
 
 ```
+ng g component toolbar
+```
+This will also *import toolbar component* in the declaration array in` app.module.ts` file.  
+After that, we have to place the selector `<app-toolbar></app-toolbar>` of toolbar component in `app.component.html
+
+## Step 4: Designing Navbar Template
+In the `toolbar.component.html` write the following HTML code for navBar Component
+
+```html
+<!-- .navbar -->
+
+<!-- .navbar-expand class can create navigation bar vertical depending on the screen size -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <!-- .navbar-brand class ids for company, product, or project name -->
+      <a class="navbar-brand" href="#">BBBank</a>
+      
+      <!-- Toggler/collapsible Button -->
+
+      <!-- .navbar-toggler class is used to determine when the content toggles behind a button -->
+      <!-- data-bs-target="" used to target the navbar content to collapse/Toggle when matches the content's id="" -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                                                   data-bs-target="#navbarSupportedContent" 
+                                                   aria-controls="navbarSupportedContent" 
+                                                   aria-expanded="false" 
+                                                   aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Content -->
+
+      <!-- The .collapse .navbar-collapse classes are for grouping and hiding navbar contents by a parent breakpoint -->
+      <!-- The id="" of navbar content should matches with the button data-bs-target="#" to work toggle properly -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- .navbar-nav class is for full-height and lightweight navigation (including support for dropdowns) -->
+        <ul class="navbar-nav mb-2 mb-lg-0 ml-nav-custom">
+
+          <li class="nav-item dropdown d-flex flex-end">
+            
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                                                data-bs-toggle="dropdown" aria-expanded="true">
+                <div class="photo">
+                    <img alt="Profile Photo" src="assets/images/profile.jpg" />
+                </div>
+                Raas Masood
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+```
+
+
+## Step 4: Styling our Application
+
+In the `styles.css` in **src folder** paste the following code for styling our application layout. This is global styling. 
+
+```css
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #525f7f;
+  text-align: left;
+  background-color: #1e1e2f;
+}
+
+.bg-dark {
+    background-color: #1e1e2f !important;
+}
+```
+
+
+## Step 5: Styling our NavBar Component
+Now we will style our toolbar component. In the `toolbar.component.css` in file paste the following css code for styling the navbar
+
+```css
+
+/* Used to style profile photo in navbar */
+.navbar .photo {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.navbar .photo img {
+    width: 100%;
+}
+
+/* Class to align photo icon left in navbar */
+.ml-nav-custom {
+    margin-left: auto !important;
+}
+
+```
+
+## Step 6: Add component for side nav
+We will generate a new component for side nav menu.
+we will use Angular CLI's generate component command as below 
+
+```
 ng g component sidenav
 ```
 
-## Step 3: Add component for side nav
+## Step 7: Material Side Nav
 
-Use Angular CLI's generate component command as below 
+### How Material SideNav works?
 
-```
-ng g component sidenav
-```
+To set up a Material `sidenav` we use three components: `mat-sidenav-container`, `mat-sidenav-content`and `mat-sidenav`.
 
-## Step 4: Setting Up Side Nav
-
-To set up a `sidenav` we use three components: `mat-sidenav-container`, `mat-sidenav-content`and `mat-sidenav`
-
-
-
+Here are the component details as below :
 ```html
 <!-- mat-sidenav-container which acts as a structural container for our content and sidenav  -->
     <mat-sidenav-container>
@@ -122,12 +236,12 @@ To set up a `sidenav` we use three components: `mat-sidenav-container`, `mat-sid
     </mat-sidenav-container>
 ```
 
-## Step 5: mat-sidenav
+### Setting Up mat-sidenav
 
 `mat-sidenav` is going to hold the html for the side nav so we will put `<app-sidenav></app-sidenav>` there
 and contents of the routed components will go inside `<mat-sidenav-content>` so we will paste `<router-outlet></router-outlet>` in mat-sidenav-content. 
 
-We don't want our top nav to be effected by the side nav so  add sidenav structure under the toolbar component in app.components.html
+We don't want our top nav to be effected by the side nav so add sidenav structure under the toolbar component in `app.components.html`
 
 Set `height: 100%` so that menu can be render on full screen.
 
@@ -142,13 +256,12 @@ Set `height: 100%` so that menu can be render on full screen.
             <router-outlet></router-outlet> 
           </mat-sidenav-content>
       </mat-sidenav-container>
-
 </div>
 ```
 
-## Step 6: Adding Style for side nav
+## Step 8: Adding Style for side nav
 
-Add following `CSS` in sidenav.component.css to style the side nav. 
+Add following `CSS` in `sidenav.component.css` to style the side nav. 
 
 ```css
 .sidenav { /* styles to give redish gradient to side nav */
@@ -245,15 +358,15 @@ Add following `CSS` in sidenav.component.css to style the side nav.
 }
 ```
 
-## Step 7: Side Nav Html
+## Step 8: Setting Up Side Nav Template
 
 
 Side Nav will have 2 parts. The logo part at the top and navigation links part at the button.
 
 
-Add logo image to assets and copy the commented routing links from app.components.html under logo div 
+Add logo image to assets and copy the commented routing links from `app.components.html` under logo div 
 
-add "nav" style to ul and active style to dashboard link.
+add `nav` style to `ul` tag and active style to dashboard link.
 
 ``` html
 <div class="sidenav">
@@ -279,7 +392,7 @@ add "nav" style to ul and active style to dashboard link.
 </div>
 ```
 
-## Step 8: Fixing navbar background colors
+## Step 9: Fixing navbar background colors
 
 To match the background of navbar with our application's background color use the following style in main `style.css` file 
 
@@ -296,30 +409,31 @@ To match the background of navbar with our application's background color use th
 }
 ```
 
-## Step 9: Opening the side nav
+## Step 10: Setting Up Side Nav Default behavior 
 
-Setting `opened` and `side` mode to `mat-sidenav` to start is as opened by default. 
+Open the `app.component.html` and set `opened` and `side` property mode to `mat-sidenav` to start is as opened by default. 
 
 
 ```html
 <!-- opened is used to show the navbar by default. -->
 <!-- side mode is used to show side navbar on the side of the page. -->
 <!-- #sideNav is used as template reference variable. -->
-  <mat-sidenav #sideNav opened mode="side" >
+  <mat-sidenav opened mode="side">
 ```
 
   ## Step 10: Toggling Sidenav
       
-Add a [Template Reference variable](https://angular.io/guide/template-reference-variables) to side nav.
+Open the `app.component.html` and add a [Template Reference variable](https://angular.io/guide/template-reference-variables) named `#sideNav` to side nav.
 
 ```html
-​    <mat-sidenav #sideNav opened mode="side" >
+​  <mat-sidenav opened #sidenav mode="side">
 ```
 
 Add an [@input](https://angular.io/guide/inputs-outputs) variable inputSideNav of type MatSidenav
 in Toolbar.Component.ts as below : 
 
 ```javascript
+import { MatSidenav } from '@angular/material/sidenav';
 export class ToolbarComponent implements OnInit {
   // @ts-ignore: Object is possible 'null'
   @Input() inputSideNav:MatSidenav
@@ -336,11 +450,12 @@ After that pass the reference variable to toolbar component so that we can contr
 
 
 
-Create a link in toolbar.component.html and add a `click` event to it as below : 
+Create a new link in `toolbar.component.html` and add a `click` event.
+The link will be added under  `<nav class="navbar navbar-expand-lg navbar-dark bg-dark">` tag as below 
 
 ```html
    <a class="sidenav-button"><i class="fas fa-bars" aria-hidden="true" (click)="inputSideNav.toggle()" > </i></a>
- 
+
 ```
 
 Here `inputSideNav.toggle()` is used to switch from one effect to other and vise versa.
