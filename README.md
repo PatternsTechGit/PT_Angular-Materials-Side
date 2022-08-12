@@ -9,12 +9,12 @@
 
 Angular Material provides two sets of components designed to add collapsible side content (often navigation, though it can be any content) alongside some primary content. These are the sidenav and drawer components.
 
-The sidenav components are designed to add side content to a fullscreen app. 
+The sidenav components are designed to add side content to a full screen app. 
 For more details click link https://material.angular.io/components/sidenav/overview 
 
 ## About this exercise
 
-Previously we scafolded a new Angular application in which we have integrated 
+Previously we scaffolded a new Angular application in which we have integrated 
 
 * FontAwesome Library for icons
 * Bootstrap Library for styling buttons
@@ -40,7 +40,7 @@ In this exercise we will
 * Integrate Toggling of Side Nav using Toolbar 
 
 
-<font size="5" color="grey">**Step 1: Adding Angular Material support**</font> 
+## Step 1: Adding Angular Material support
 
 Use the `Angular CLI's` installation schematic to set up your Angular Material project by running the following command:
 
@@ -70,7 +70,7 @@ You can see the changes as below :
 
 
 
-<font size="5" color="grey">**Step 2 : Forms module and MatSidenavModule**</font>
+## Step 2 : Forms module and MatSidenavModule
 
 The [FormsModule](https://angular.io/api/forms/FormsModule) is used for form implementation.
 
@@ -85,8 +85,16 @@ imports: [
     MatSidenavModule
   ],
 ```
+## Step 3: Add Toolbar Component
+We will add a new component for toolbar which will contains the logged-In user  information.
 
-<font size="5" color="grey">**Step 3: Add component for side nav**</font>
+To generate a new component we will use Angular CLI's generate component command as below :
+
+```
+ng g component sidenav
+```
+
+## Step 3: Add component for side nav
 
 Use Angular CLI's generate component command as below 
 
@@ -94,7 +102,7 @@ Use Angular CLI's generate component command as below
 ng g component sidenav
 ```
 
-<font size="5" color="grey">**Step 4: Setting Up Side Nav**</font>
+## Step 4: Setting Up Side Nav
 
 To set up a `sidenav` we use three components: `mat-sidenav-container`, `mat-sidenav-content`and `mat-sidenav`
 
@@ -114,7 +122,7 @@ To set up a `sidenav` we use three components: `mat-sidenav-container`, `mat-sid
     </mat-sidenav-container>
 ```
 
-<font size="5" color="grey">**Step 5: mat-sidenav**</font>
+## Step 5: mat-sidenav
 
 `mat-sidenav` is going to hold the html for the side nav so we will put `<app-sidenav></app-sidenav>` there
 and contents of the routed components will go inside `<mat-sidenav-content>` so we will paste `<router-outlet></router-outlet>` in mat-sidenav-content. 
@@ -138,12 +146,12 @@ Set `height: 100%` so that menu can be render on full screen.
 </div>
 ```
 
-<font size="5" color="grey">**Step 6: Adding Style for side nav**</font>
+## Step 6: Adding Style for side nav
 
 Add following `CSS` in sidenav.component.css to style the side nav. 
 
 ```css
-.sidenav { /* styles to give redish gradiesnt to side nav */
+.sidenav { /* styles to give redish gradient to side nav */
     background: #ec250d;
     background: linear-gradient(0deg,#ec250d 0,#fd5d93 100%);
     /* height: calc(100vh - 90px); */
@@ -237,7 +245,7 @@ Add following `CSS` in sidenav.component.css to style the side nav.
 }
 ```
 
-<font size="5" color="grey">**Step 7: Side Nav Html**</font>
+## Step 7: Side Nav Html
 
 
 Side Nav will have 2 parts. The logo part at the top and navigation links part at the button.
@@ -271,7 +279,7 @@ add "nav" style to ul and active style to dashboard link.
 </div>
 ```
 
-<font size="5" color="grey">**Step 8: Fixing navbar background colors**</font>
+## Step 8: Fixing navbar background colors
 
 To match the background of navbar with our application's background color use the following style in main `style.css` file 
 
@@ -288,21 +296,21 @@ To match the background of navbar with our application's background color use th
 }
 ```
 
-<font size="5" color="grey">**Step 9: Opening the side nav**</font>
+## Step 9: Opening the side nav
 
 Setting `opened` and `side` mode to `mat-sidenav` to start is as opened by default. 
 
 
 ```html
 <!-- opened is used to show the navbar by default. -->
-<!-- side mode is used to ashow side navbar on the side of the page. -->
-<!-- #sideNav is used as template regerence variable. -->
+<!-- side mode is used to show side navbar on the side of the page. -->
+<!-- #sideNav is used as template reference variable. -->
   <mat-sidenav #sideNav opened mode="side" >
 ```
 
-   <font size="5" color="grey">**Step 10: Toggling Sidenav**</font>
+  ## Step 10: Toggling Sidenav
       
-Add a [Template Refrence variable](https://angular.io/guide/template-reference-variables) to side nav.
+Add a [Template Reference variable](https://angular.io/guide/template-reference-variables) to side nav.
 
 ```html
 ​    <mat-sidenav #sideNav opened mode="side" >
